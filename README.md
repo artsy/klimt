@@ -4,6 +4,12 @@ At Artsy, we are often querying REST endpoints and transforming that data into a
 In this exercise, we provide a sample API with a single endpoint and ask you to write some code to request data from
 the API and transform the response. We provided tests and starter files in Javascript and Ruby, but feel free to use a language of your choice.
 
+## TODO
+- [ ] Add yarnfile
+- [ ] Write tests for client.js
+- [ ] Write tests for client.rb
+- [ ] Write test script to run server and test files
+
 ## Artworks API
 
 You'll be provided with a `/artworks` API endpoint that returns a JSON array of items in the following format:
