@@ -1,8 +1,11 @@
-import URI from "urijs";
+const axios = require('axios');
 
 // /artworks endpoint
-url = "http://localhost:4567/artworks";
+const url = "http://localhost:4567/artworks";
 
 // Your retrieve function plus any additional functions go here ...
+const retrieve = () => {}
 
-export default retrieve;
+module.exports = {
+  retrieve
+}
