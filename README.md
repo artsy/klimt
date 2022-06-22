@@ -44,7 +44,7 @@ The `/artworks` endpoint accepts the following options, sent as query string par
 An example request URL might look like:
 
 ```
-/records?limit=2&offset=0&dominant_color[]=brown&dominant_color[]=green
+/artworks?limit=2&offset=0&dominant_color[]=brown&dominant_color[]=green
 ```
 
 ## Task
