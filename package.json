@@ -1,0 +1,33 @@
+{
+  "name": "Artsy-Klimt-Coding-Exercise",
+  "version": "1.0.0",
+  "description": "Homework/Pair programming exercise using modern JS tooling (ES6/flow) or Ruby",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "8",
+    "es6-promise": "^4.0.5",
+    "express": "^4.15.2",
+    "fetch-ponyfill": "6.1.1",
+    "urijs": "^1.18.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "./node_modules/.bin/webpack --config webpack.config.js"
+  },
+  "jest": {
+    "globalSetup": "./test/globalSetup.js",
+    "globalTeardown": "./test/globalTeardown.js"
+  },
+  "author": "Artsy",
+  "license": "GPL-2.0"
+}
