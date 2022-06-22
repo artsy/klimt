@@ -1,17 +1,14 @@
-require "faraday"
-require 'faraday/net_http'
-Faraday.default_adapter = :net_http
+require 'rest-client'
+require 'json'
 
 class Client
 
   # /artworks endpoint
-  url = "http://localhost:4567/artworks"
+  URL = "http://localhost:4567/artworks"
+
   # Your retrieve function plus any additional functions go here ...
+  def retrieve
+
+  end
 
 end
-
-# /artworks endpoint
-url = "http://localhost:4567/artworks"
-
-
-# Your retrieve function plus any additional functions go here ...

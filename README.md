@@ -99,7 +99,7 @@ In `client/client.js` or `client/client.rb`, write a function named `retrieve` t
 
 `bundle install` to install.
 
-`ruby api/server.rb` to run the server, then `bundle rspec` to run the provided unit tests.
+`ruby api/server.rb` to run the server, then `bundle exec rspec test/client_spec.rb` to run the provided unit tests.
 
 # Credit
 
