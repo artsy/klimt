@@ -22,9 +22,9 @@ describe("client", () => {
         expect(output).toEqual(expected);
       }).then(done);
     });
-    it('fifteenth page with colors', (done) => {
+    it('fifteenth page with dominant colors', (done) => {
       var expected = {"previousPage":14,"nextPage":16,"ids":[236,237,238,240,241,243,246,251,252,256],"for_sale":[{"id":240,"dominant_colors":"blue","availability":"for_sale","isPrimary":true},{"id":241,"dominant_colors":"red","availability":"for_sale","isPrimary":true},{"id":243,"dominant_colors":"blue","availability":"for_sale","isPrimary":true},{"id":251,"dominant_colors":"blue","availability":"for_sale","isPrimary":true},{"id":252,"dominant_colors":"blue","availability":"for_sale","isPrimary":true},{"id":256,"dominant_colors":"red","availability":"for_sale","isPrimary":true}],"soldPrimaryCount":4};
-      retrieve({page: 15, colors: ["red", "blue", "brown"]}).then((output) => {
+      retrieve({page: 15, dominant_colors: ["red", "blue", "brown"]}).then((output) => {
         expect(output).toEqual(expected);
       }).then(done);
     });
@@ -49,23 +49,23 @@ describe("client", () => {
     }).then(done);
   });
 
-  it('should return results filtered by multiple colors', (done) => {
+  it('should return results filtered by multiple dominant colors', (done) => {
     var expected = {"previousPage":null,"nextPage":2,"ids":[5,6,10,11,15,16,17,22,23,24],"for_sale":[{"id":6,"dominant_colors":"blue","availability":"for_sale","isPrimary":true},{"id":10,"dominant_colors":"red","availability":"for_sale","isPrimary":true},{"id":23,"dominant_colors":"red","availability":"for_sale","isPrimary":true},{"id":24,"dominant_colors":"red","availability":"for_sale","isPrimary":true}],"soldPrimaryCount":6};
-    retrieve({page: 1, colors: ['red', 'blue']}).then((output) => {
+    retrieve({page: 1, dominant_colors: ['red', 'blue']}).then((output) => {
       expect(output).toEqual(expected);
     }).then(done);
   });
 
-  it('should return results filtered by a single dominant_colors', (done) => {
+  it('should return results filtered by a single dominant color', (done) => {
     var expected = {"previousPage":null,"nextPage":2,"ids":[1,3,4,9,20,27,29,41,42,55],"for_sale":[{"id":4,"dominant_colors":"brown","availability":"for_sale","isPrimary":false},{"id":41,"dominant_colors":"brown","availability":"for_sale","isPrimary":false},{"id":55,"dominant_colors":"brown","availability":"for_sale","isPrimary":false}],"soldPrimaryCount":0};
-    retrieve({colors: ["brown"]}).then((output) => {
+    retrieve({dominant_colors: ["brown"]}).then((output) => {
       expect(output).toEqual(expected);
     }).then(done);
   });
 
   it('should return empty results', (done) => {
     var expected = {"previousPage":null,"nextPage":null,"ids":[],"for_sale":[],"soldPrimaryCount":0};
-    retrieve({colors: ["hotpink"]}).then((output) => {
+    retrieve({dominant_colors: ["hotpink"]}).then((output) => {
       expect(output).toEqual(expected);
     }).then(done);
   });
