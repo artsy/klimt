@@ -5,9 +5,6 @@ In this exercise, we provide a sample API with a single endpoint and ask you to 
 the API and transform the response. We provided tests and starter files in Javascript and Ruby, but feel free to use a language of your choice.
 
 ## TODO
-- [ ] Add yarnfile
-- [ ] Write tests for client.js
-- [ ] Write tests for client.rb
 - [ ] Write test script to run server and test files
 
 ## Artworks API
