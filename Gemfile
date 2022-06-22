@@ -3,4 +3,8 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'json'
-gem 'faraday'
+gem 'rest-client'
+
+group :development, :test do
+  gem 'rspec'
+end

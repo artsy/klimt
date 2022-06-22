@@ -93,13 +93,13 @@ In `client/client.js` or `client/client.rb`, write a function named `retrieve` t
 
 `yarn install` to install.
 
-`yarn test` to run the provided unit tests.
+`ruby api/server.rb` to run the server, then `yarn test` to run the provided unit tests.
 
 # Ruby
 
 `bundle install` to install.
 
-`bundle rspec` to run provided unit testss
+`ruby api/server.rb` to run the server, then `bundle exec rspec test/client_spec.rb` to run the provided unit tests.
 
 # Credit
 

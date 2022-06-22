@@ -1,7 +1,14 @@
-require "faraday"
+require 'rest-client'
+require 'json'
 
-# /artworks endpoint
-url = "http://localhost:4567/artworks"
+class Client
 
+  # /artworks endpoint
+  URL = "http://localhost:4567/artworks"
 
-# Your retrieve function plus any additional functions go here ...
+  # Your retrieve function plus any additional functions go here ...
+  def retrieve
+
+  end
+
+end
