@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "axios": "^0.27.2",
+    "jest": "^28.1.1",
+    "node-fetch": "^3.2.6"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
