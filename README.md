@@ -44,7 +44,7 @@ The `/artworks` endpoint accepts the following options, sent as query string par
 An example request URL might look like:
 
 ```
-/records?limit=2&offset=0&dominant_color[]=brown&dominant_color[]=green
+/artworks?limit=2&offset=0&dominant_color[]=brown&dominant_color[]=green
 ```
 
 ## Task
@@ -55,8 +55,8 @@ In `client/client.js` or `client/client.rb`, write a function named `retrieve` t
 
 2. The `retrieve` function accepts an `options` object and should support the following keys:
 
-- **page** - Specifies which page to retrieve from the `/records` endpoint. If omitted, fetch page 1.
-- **dominant_colors** - An array of dominant colors to retrieve from the `/records` endpoint. If omitted, fetch all dominant colors.
+- **page** - Specifies which page to retrieve from the `/artworks` endpoint. If omitted, fetch page 1.
+- **dominant_colors** - An array of dominant colors to retrieve from the `/artworks` endpoint. If omitted, fetch all dominant colors.
 
   As an example, to fetch the 2nd page of red and brown items from the API, `retrieve` might be called like this:
 
