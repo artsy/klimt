@@ -16,12 +16,14 @@ You'll be provided with a `/artworks` API endpoint that returns a JSON array of 
   {
     "id": 1,
     "dominant_color": "brown",
-    "availability": "sold"
+    "availability": "sold",
+    "artist_id": 3
   },
   {
     "id": 2,
     "dominant_color": "green",
-    "availability": "for_sale"
+    "availability": "for_sale",
+    "artist_id": 1
   }
 ]
 ```
@@ -44,6 +46,31 @@ An example request URL might look like:
 /artworks?limit=2&offset=0&dominant_color[]=brown&dominant_color[]=green
 ```
 
+## Artist API
+
+You'll also be provided with a `/artist` API endpoint that returns a JSON hash in the following format:
+
+```json
+{
+  "id": 1,
+  "name": "Gustav Klimt"
+}
+```
+
+The hash returned from the `/artist` endpoint will have the following:
+
+- **id**: A unique integer
+- **name**: A string indicating the name of the artist
+
+The `/artist` endpoint accepts the following options, sent as query string parameters on the request URL:
+
+- **id**: Unique integer linked to an artist
+
+An example request URL might look like:
+
+```
+/artist?id=3
+```
 ## Task
 
 In `client/client.js` or `client/client.rb`, write a function named `retrieve` that requests data from the `/artworks` endpoint, transforms the result into the format outlined below, and returns a promise that resolves with the transformed object. In addition to `retrieve`, you may add as many helper functions as you wish.
@@ -68,10 +95,11 @@ In `client/client.js` or `client/client.rb`, write a function named `retrieve` t
 - **ids**: An array containing the ids of all items returned from the request.
 - **for_sale**: An array containing all of the items returned from the request that have a `availability` value of `"for_sale"`. Add a fourth key to each item called `isPrimary` indicating whether or not the item contains a primary color (red, blue, or yellow).
 - **soldPrimaryCount**: The total number of items returned from the request that have a `availability` value of `"sold"` and contain a primary color.
+- **artistNames**: An array containing all the artists associated with the items returned from the request.
 - **previousPage**: The page number for the previous page of results, or `null` if this is the first page.
 - **nextPage**: The page number for the next page of results, or `null` if this is the last page.
 
-5. Return a promise from `retrieve` that resolves with the transformed data.
+5. For the Javascript exercise, return a promise from `retrieve` that resolves with the transformed data. For the Ruby exercise, return a Hash with the transformed data.
 
 ## Additional requirements
 

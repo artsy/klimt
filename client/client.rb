@@ -4,7 +4,8 @@ require 'json'
 class Client
 
   # /artworks endpoint
-  URL = "http://localhost:4567/artworks"
+  ARTWORKS_URL = "http://localhost:4567/artworks"
+  ARTIST_URL = "http://localhost:4567/artist"
 
   # Your retrieve function plus any additional functions go here ...
   def retrieve
