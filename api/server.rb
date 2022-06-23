@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/json'
 
-data = [
+artwork_data = [
   { id: 1, dominant_color: "brown", availability: "sold" },
   { id: 2, dominant_color: "yellow", availability: "for_sale" },
   { id: 3, dominant_color: "brown", availability: "sold" },
@@ -504,6 +504,17 @@ data = [
   { id: 500, dominant_color: "blue", availability: "sold" }
 ]
 
+artist_data = [
+  { id: 1, name: 'Gustav Klimt'},
+  { id: 2, name: 'Hilma af Klint'},
+  { id: 3, name: 'Tschabalala Self'},
+  { id: 4, name: 'Fan Ho'},
+  { id: 5, name: 'Robert Motherwell'},
+  { id: 6, name: 'Kara Walker'},
+  { id: 7, name: 'Julie Mehretu'},
+  { id: 8, name: 'Tammy Nyugen'},
+  { id: 9, name: 'Kehinde Wiley'}
+]
 
 get '/artworks' do
   limit = params['limit'].nil? ? 100 : Integer(params['limit'])
@@ -519,10 +530,22 @@ get '/artworks' do
   end
 
   if dominant_colors
-    res = data.select{ |artwork| dominant_colors.include?(artwork[:dominant_color]) }
+    res = artwork_data.select{ |artwork| dominant_colors.include?(artwork[:dominant_color]) }
   else
-    res = data
+    res = artwork_data
   end
 
   json res.slice(offset.to_i, limit.to_i)
+end
+
+get '/artist' do
+  if params['id'].nil?
+    halt 400, "Bad Request"
+  end
+
+  artist_id = Integer(params['id'])
+
+  artist = artist_data.select { |artist| artist[:id] == artist_id }
+
+  json artist
 end
