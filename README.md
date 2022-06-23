@@ -104,7 +104,7 @@ In `client/client.js` or `client/client.rb`, write a function named `retrieve` t
 ## Additional requirements
 
 - Use the provided URI library to construct the request URL. Refer to https://medialize.github.io/URI.js/ for documentation.
-- For the Javascript option, you should use the Fetch API to interact with the `artworks` endpoint. Refer to https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API for documentation.
+- For the Javascript option, you should use the Axios API to interact with the `artworks` endpoint. Refer to https://axios-http.com/docs/intro for documentation.
 - For the Ruby option, you should use the REST Client library to interact with the `artworks` endpoint. Refer to https://rubydoc.info/github/rest-client/rest-client/master for documentation.
 - Don't add any additional libraries or edit any files other than `client/client.js` or `client/client.rb`
 - We've provided a suite of unit tests. Your solution should pass all tests.
