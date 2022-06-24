@@ -1,7 +1,7 @@
 const { retrieve } = require('./client')
 
 describe('client', () => {
-	fit('should return unfiltered results', (done) => {
+	it('should return unfiltered results', (done) => {
 		var expected = {
 			previousPage: null,
 			nextPage: 2,
@@ -48,7 +48,7 @@ describe('client', () => {
 	})
 
 	describe('should return results for', () => {
-		fit('first page', (done) => {
+		it('first page', (done) => {
 			var expected = {
 				previousPage: null,
 				nextPage: 2,
@@ -93,7 +93,7 @@ describe('client', () => {
 				})
 				.then(done)
 		})
-		fit('third page', (done) => {
+		it('third page', (done) => {
 			var expected = {
 				previousPage: 2,
 				nextPage: 4,
