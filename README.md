@@ -4,8 +4,26 @@ At Artsy, we are often querying REST endpoints and transforming that data into a
 In this exercise, we provide a sample API with a single endpoint and ask you to write some code to request data from
 the API and transform the response. We provided tests and starter files in Javascript and Ruby, but feel free to use a language of your choice.
 
-## TODO
+## Setup
+
+### Javascript
+
+**Requirements:** NodeJS >= 10, [yarn](https://yarnpkg.com/en/docs/install)
+
+`yarn install` to install.
+
+`ruby api/server.rb` to run the server, then `yarn test` to run the provided unit tests.
+
+### Ruby
+
+`bundle install` to install.
+
+`ruby api/server.rb` to run the server, then `bundle exec rspec test/client_spec.rb` to run the provided unit tests.
+
+
+### TODO
 - [ ] Write test script to run server and test files
+
 
 ## Artworks API
 
@@ -108,22 +126,6 @@ In `client/client.js` or `client/client.rb`, write a function named `retrieve` t
 - For the Ruby option, you should use the REST Client library to interact with the `artworks` endpoint. Refer to https://rubydoc.info/github/rest-client/rest-client/master for documentation.
 - Don't add any additional libraries or edit any files other than `client/client.js` or `client/client.rb`
 - We've provided a suite of unit tests. Your solution should pass all tests.
-
-## Setup
-
-# Javascript
-
-**Requirements:** NodeJS >= 10, [yarn](https://yarnpkg.com/en/docs/install)
-
-`yarn install` to install.
-
-`ruby api/server.rb` to run the server, then `yarn test` to run the provided unit tests.
-
-# Ruby
-
-`bundle install` to install.
-
-`ruby api/server.rb` to run the server, then `bundle exec rspec test/client_spec.rb` to run the provided unit tests.
 
 # Credit
 
