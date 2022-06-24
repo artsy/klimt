@@ -1,7 +1,8 @@
 # Klimt
 
-At Artsy, we are often querying REST endpoints and transforming that data into another format needed by the client
-In this exercise, we provide a sample API with a single endpoint and ask you to write some code to request data from
+At Artsy, we often need to query REST endpoints and transform that data into another format needed by the client.
+
+In this exercise, we provide a sample API with two endpoints and ask you to write some code to request data from
 the API and transform the response. We provided tests and starter files in Javascript and Ruby, but feel free to use a language of your choice.
 
 ## TODO
