@@ -108,7 +108,6 @@ In `client/client.js` or `client/client.rb`, write a function named `retrieve` t
 - For the Ruby option, you should use the REST Client library to interact with the `artworks` endpoint. Refer to https://rubydoc.info/github/rest-client/rest-client/master for documentation.
 - Don't add any additional libraries or edit any files other than `client/client.js` or `client/client.rb`
 - We've provided a suite of unit tests. Your solution should pass all tests.
-- Please delete the `node_modules` directory (if applicable) before submitting your completed homework.
 
 ## Setup
 
