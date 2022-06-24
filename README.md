@@ -114,7 +114,7 @@ In `client/client.js` or `client/client.rb`, write a function named `retrieve` t
 - **ids**: An array containing the ids of all items returned from the request.
 - **for_sale**: An array containing all of the items returned from the request that have a `availability` value of `"for_sale"`. Add a fourth key to each item called `isPrimary` indicating whether or not the item contains a primary color (red, blue, or yellow).
 - **soldPrimaryCount**: The total number of items returned from the request that have a `availability` value of `"sold"` and contain a primary color.
-- **artistNames**: An array containing all the artists associated with the items returned from the request.
+- **artistNames**: An array containing all the artists associated with the items returned from the request sorted alphabetically by full name.
 - **previousPage**: The page number for the previous page of results, or `null` if this is the first page.
 - **nextPage**: The page number for the next page of results, or `null` if this is the last page.
 
