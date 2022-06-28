@@ -280,7 +280,7 @@ describe("client", () => {
         "nextPage": 16
       }
 
-      const response = await retrieve({page: 15, dominant_colors: ["red", "blue", "brown"]});
+      const response = await retrieve({page: 15, dominant_color: ["red", "blue", "brown"]});
       expect(response).toEqual(expected);
     });
 
@@ -472,7 +472,7 @@ describe("client", () => {
       "nextPage": 2
     }
 
-    const response = await retrieve({page: 1, dominant_colors: ['red', 'blue']});
+    const response = await retrieve({page: 1, dominant_color: ['red', 'blue']});
     expect(response).toEqual(expected);
   });
 
@@ -523,7 +523,7 @@ describe("client", () => {
       "nextPage": 2
     }
     
-    const response = await retrieve({dominant_colors: ["brown"]});
+    const response = await retrieve({dominant_color: ["brown"]});
     expect(response).toEqual(expected);
   });
 
@@ -543,7 +543,7 @@ describe("client", () => {
       "nextPage": null
     }
 
-    const response = await retrieve({dominant_colors: ["hotpink"]});
+    const response = await retrieve({dominant_color: ["hotpink"]});
     expect(response).toEqual(expected);
   });
 

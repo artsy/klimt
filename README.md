@@ -57,7 +57,7 @@ The `/artworks` endpoint accepts the following options, sent as query string par
 
 - **limit**: The number of items to be returned
 - **offset**: The index of the first item to be returned
-- **dominant_color[]**: Which color to be included in the result set. May be included multiple times, once for each color. If omitted, all dominant_colors will be returned.
+- **dominant_color[]**: Which color to be included in the result set. May be included multiple times, once for each color. If omitted, all dominant_color will be returned.
 
 An example request URL might look like:
 
@@ -99,12 +99,12 @@ In `client/client.js` or `client/client.rb`, write a function named `retrieve` t
 2. The `retrieve` function accepts an `options` object and should support the following keys:
 
 - **page** - Specifies which page to retrieve from the `/artworks` endpoint. If omitted, fetch page 1.
-- **dominant_colors** - An array of dominant colors to retrieve from the `/artworks` endpoint. If omitted, fetch all dominant colors.
+- **dominant_color** - An array of dominant colors to retrieve from the `/artworks` endpoint. If omitted, fetch all dominant colors.
 
   As an example, to fetch the 2nd page of red and brown items from the API, `retrieve` might be called like this:
 
   ```
-  retrieve({ page: 2, dominant_colors: ["red", "brown"] });
+  retrieve({ page: 2, dominant_color: ["red", "brown"] });
   ```
 
 3. You can assume standard HTTP status codes on the response. If a request is unsuccessful, output a simple error message via `console.log()` or `puts` and recover.

@@ -200,7 +200,7 @@ describe Client do
 
       expect(client.retrieve({page: 3})).to eq expected
     end
-    it 'fifteenth page with dominant_colors' do
+    it 'fifteenth page with dominant_color' do
       expected = {
         "ids": [
           236,
@@ -272,7 +272,7 @@ describe Client do
         "nextPage": 16
       }
       
-      expect(client.retrieve({page: 15, dominant_colors: ["red", "blue", "brown"]})).to eq expected
+      expect(client.retrieve({page: 15, dominant_color: ["red", "blue", "brown"]})).to eq expected
     end
     it 'thirty fourth page' do
       expected = {
@@ -458,7 +458,7 @@ describe Client do
       "nextPage": 2
     }
 
-    expect(client.retrieve({page: 1, dominant_colors: ['red', 'blue']})).to eq expected
+    expect(client.retrieve({page: 1, dominant_color: ['red', 'blue']})).to eq expected
   end
 
   it 'should return results filtered by a single dominant color' do
@@ -508,7 +508,7 @@ describe Client do
       "nextPage": 2
     }
     
-    expect(client.retrieve({dominant_colors: ["brown"]})).to eq expected
+    expect(client.retrieve({dominant_color: ["brown"]})).to eq expected
   end
 
   it 'should return empty results' do
@@ -527,7 +527,7 @@ describe Client do
       "nextPage": nil
     }
     
-    expect(client.retrieve({dominant_colors: ["hotpink"]})).to eq expected
+    expect(client.retrieve({dominant_color: ["hotpink"]})).to eq expected
   end
 
 
