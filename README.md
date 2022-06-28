@@ -57,7 +57,7 @@ The `/artworks` endpoint accepts the following options, sent as query string par
 
 - **limit**: The number of items to be returned
 - **offset**: The index of the first item to be returned
-- **dominant_color[]**: Which color to be included in the result set. May be included multiple times, once for each color. If omitted, all dominant_color will be returned.
+- **dominant_color[]**: Which color to be included in the result set. May be included multiple times, once for each color. If omitted, all `dominant_color` values will be returned.
 
 An example request URL might look like:
 
