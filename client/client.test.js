@@ -5,7 +5,6 @@ describe('basic', () => {
   it('pings', async () => {
     const response = await axios.get('/ping')
     expect(response).toEqual('pong')
-    })
   })
 })
 
