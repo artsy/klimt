@@ -550,3 +550,7 @@ get '/artist' do
 
   json artist
 end
+
+get '/ping' do
+  "pong"
+end
