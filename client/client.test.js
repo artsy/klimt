@@ -1,7 +1,15 @@
-const { retrieve} = require('./client')
+const axios = require('axios')
+const { retrieve } = require('./client')
+
+describe('basic', () => {
+  it('pings', async () => {
+    const response = await axios.get('/ping')
+    expect(response).toEqual('pong')
+    })
+  })
+})
 
 describe("client", () => {
-
   it('should return unfiltered results', async () => {
     var expected = {
       "ids": [
