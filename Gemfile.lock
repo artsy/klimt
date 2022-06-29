@@ -55,6 +55,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   json
@@ -64,4 +65,4 @@ DEPENDENCIES
   sinatra-contrib
 
 BUNDLED WITH
-   2.3.9
+   2.3.16
