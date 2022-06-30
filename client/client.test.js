@@ -2,18 +2,14 @@ const axios = require('axios')
 const { retrieve } = require('./client')
 
 describe('basic', () => {
-  it('pings', (done) => {
-    axios
-      .get('/ping')
-      .then(function (output) {
-        expect(output).toEqual('pong')
-      })
-      .then(done)
+  it('pings', async () => {
+    const response = await axios.get('/ping')
+    expect(response).toEqual('pong')
   })
 })
 
 describe("client", () => {
-  it('should return unfiltered results', (done) => {
+  it('should return unfiltered results', async () => {
     var expected = {
       "ids": [
         1,
@@ -77,13 +73,12 @@ describe("client", () => {
       "nextPage": 2
     }
     
-    retrieve().then(function(output){
-      expect(output).toEqual(expected);
-    }).then(done);
+    const response = await retrieve();
+    expect(response).toEqual(expected);
   });
 
   describe('should return results for', () => {
-    it('first page', (done) => {
+    it('first page', async () => {
       var expected = {
         "ids": [
           1,
@@ -146,11 +141,12 @@ describe("client", () => {
         "previousPage": null,
         "nextPage": 2
       }
-      retrieve({page: 1}).then(function(output){
-        expect(output).toEqual(expected);
-      }).then(done);
+      
+      const response = await retrieve({page: 1});
+      expect(response).toEqual(expected);
     });
-    it('third page', (done) => {
+
+    it('third page', async () => {
       var expected = {
         "ids": [
           21,
@@ -207,11 +203,12 @@ describe("client", () => {
         "previousPage": 2,
         "nextPage": 4
       }
-      retrieve({page: 3}).then((output) => {
-        expect(output).toEqual(expected);
-      }).then(done);
+
+      const response = await retrieve({page: 3});
+      expect(response).toEqual(expected);
     });
-    it('fifteenth page with dominant colors', (done) => {
+
+    it('fifteenth page with dominant colors', async () => {
       var expected = {
         "ids": [
           236,
@@ -282,11 +279,12 @@ describe("client", () => {
         "previousPage": 14,
         "nextPage": 16
       }
-      retrieve({page: 15, dominant_colors: ["red", "blue", "brown"]}).then((output) => {
-        expect(output).toEqual(expected);
-      }).then(done);
+
+      const response = await retrieve({page: 15, dominant_colors: ["red", "blue", "brown"]});
+      expect(response).toEqual(expected);
     });
-    it('thirty fourth page', (done) => {
+
+    it('thirty fourth page', async () => {
       var expected = {
         "ids": [
           331,
@@ -351,11 +349,12 @@ describe("client", () => {
         "previousPage": 33,
         "nextPage": 35
       }
-      retrieve({page: 34}).then((output) => {
-        expect(output).toEqual(expected);
-      }).then(done);
+
+      const response = await retrieve({page: 34});
+      expect(response).toEqual(expected);
     });
-    it('last page', (done) => {
+
+    it('last page', async () => {
       var expected = {
         "ids": [
           491,
@@ -389,9 +388,9 @@ describe("client", () => {
         "previousPage": 49,
         "nextPage": null
       }
-      retrieve({page: 50}).then((output) => {
-        expect(output).toEqual(expected);
-      }).then(done);
+
+      const response = await retrieve({page: 50});
+      expect(response).toEqual(expected);
     });
   });
 
@@ -410,9 +409,9 @@ describe("client", () => {
       "previousPage": 50,
       "nextPage": null
     }
-    retrieve({page: 51}).then((output) => {
-      expect(output).toEqual(expected);
-    }).then(done);
+    
+    const response = await retrieve({page: 51});
+    expect(response).toEqual(expected);
   });
 
   it('should return results filtered by multiple dominant colors', (done) => {
@@ -472,12 +471,12 @@ describe("client", () => {
       "previousPage": null,
       "nextPage": 2
     }
-    retrieve({page: 1, dominant_colors: ['red', 'blue']}).then((output) => {
-      expect(output).toEqual(expected);
-    }).then(done);
+
+    const response = await retrieve({page: 1, dominant_colors: ['red', 'blue']});
+    expect(response).toEqual(expected);
   });
 
-  it('should return results filtered by a single dominant color', (done) => {
+  it('should return results filtered by a single dominant color', async () => {
     var expected = {
       "ids": [
         1,
@@ -523,12 +522,12 @@ describe("client", () => {
       "previousPage": null,
       "nextPage": 2
     }
-    retrieve({dominant_colors: ["brown"]}).then((output) => {
-      expect(output).toEqual(expected);
-    }).then(done);
+    
+    const response = await retrieve({dominant_colors: ["brown"]});
+    expect(response).toEqual(expected);
   });
 
-  it('should return empty results', (done) => {
+  it('should return empty results', async () => {
     var expected = {
       "ids": [
     
@@ -543,9 +542,9 @@ describe("client", () => {
       "previousPage": null,
       "nextPage": null
     }
-    retrieve({dominant_colors: ["hotpink"]}).then((output) => {
-      expect(output).toEqual(expected);
-    }).then(done);
+
+    const response = await retrieve({dominant_colors: ["hotpink"]});
+    expect(response).toEqual(expected);
   });
 
 })
