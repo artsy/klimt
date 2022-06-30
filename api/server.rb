@@ -520,9 +520,9 @@ artist_data = [
 get '/artworks' do
   limit = params['limit'].nil? ? 100 : Integer(params['limit'])
   offset = params['offset'].nil? ? 0 : Integer(params['offset'])
-  dominant_colors = params['dominant_colors']
+  dominant_color = params['dominant_color']
 
-  if dominant_colors && !dominant_colors.is_a?(Array)
+  if dominant_color && !dominant_color.is_a?(Array)
     halt 400, "Bad Request"
   end
 
@@ -530,8 +530,8 @@ get '/artworks' do
     halt 400, "Bad Request"
   end
 
-  if dominant_colors
-    res = artwork_data.select{ |artwork| dominant_colors.include?(artwork[:dominant_color]) }
+  if dominant_color
+    res = artwork_data.select{ |artwork| dominant_color.include?(artwork[:dominant_color]) }
   else
     res = artwork_data
   end
