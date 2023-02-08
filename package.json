@@ -2,7 +2,7 @@
   "devDependencies": {
     "axios": "^0.27.2",
     "jest": "^28.1.1",
-    "node-fetch": "^3.2.6"
+    "node-fetch": "^3.2.10"
   },
   "scripts": {
     "test": "jest"
